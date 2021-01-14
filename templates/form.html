@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{url_for('static', filename='css/noscript.css')}}" /></noscript>
+
+		<style>
+
+		.result{
+          font-weight:bold;
+          font-size: 45px;
+
+		}
+
+    .login{
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.lastlines{color: yellow;}
+  }
+
+
+</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>Online Checkup System <br />
+						    </h1>
+						<p>Health Portal welcomes you <a href="https://twitter.com/ajlkn"></a> <a href="https://html5up.net"></a><br />
+						<a href="https://html5up.net/license"></a></p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+
+				
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">ML Project</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">DIABETES MODEL</a></li>
+							
+						</ul>
+						<ul class="icons">
+				
+							<li><a href="https://www.linkedin.com/in/ayush-raj-3427b71ab/" class="icon brands fa-linkedin"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/rayushbpgc" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						 <div class="login">
+	<h2 >Fill the form</h2>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+      <hr >
+
+        <span >Number of Pregnancies</span>
+        <br>
+    	  <input type="text"  name="Pregnancies" placeholder="Number of Pregnancies" required="required" />
+        <br>
+        <span >Insulin</span>
+        <br>
+        <input type="text" name="Insulin" placeholder="Insulin" required="required" />
+        <br>
+        <span >Body Mass Index(BMI) </span>
+        <br>
+		    <input type="text" name="bmi" placeholder="bmi" required="required" />
+        <br>
+        <span >Age</span>
+        <br>
+        <input type="text" name="age" placeholder="age" required="required" />
+        <br>
+        <span >Glucose</span>
+        <br>
+        <input type="text" name="glucose" placeholder="glucose level" required="required" />
+        <br>
+        <span >Blood Pressure</span>
+        <br>
+        <input type="text" name="bp" placeholder="bp" required="required" />
+        <br>
+        <span >Pedigree</span>
+        <br>
+        <input type="text" name="pedigree" placeholder="pedigree" required="required" />
+        <br>
+        
+        <div class="btn-block">
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+		</div>
+    <hr> 
+    </form>
+
+       <p class="result">{{prediction_text}}<p>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul id="lastlines">The form and ML model are for educational purpose only.</ul><ul><li id="lastline">Thanks for visiting</li></ul>
+					</div>
+
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="static/js/jquery.min.js"></script>
+			<script src="static/js/jquery.scrollex.min.js"></script>
+			<script src="static/js/jquery.scrolly.min.js"></script>
+			<script src="static/js/browser.min.js"></script>
+			<script src="static/js/breakpoints.min.js"></script>
+			<script src="static/js/util.js"></script>
+			<script src="static/js/main.js"></script>
+			</div>
+	</body>
+</html>
